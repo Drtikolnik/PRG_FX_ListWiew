@@ -16,6 +16,7 @@ public class KnihaController {
     @FXML
     private ListView<Kniha> knihaListView;
 
+    @FXML
     private void initialize(){
         Kniha k1 = new Kniha("Pravda Bohů", "Alberto", 2024);
         knihaListView.getItems().add(k1);
