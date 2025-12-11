@@ -23,11 +23,6 @@ public class Kniha {
 
 
 
-
-
-
-
-
     public String getTitul() {
         return titul;
     }

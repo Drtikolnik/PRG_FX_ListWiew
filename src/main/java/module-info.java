@@ -5,5 +5,7 @@ module com.example.prg_fx_listwiew {
 
 
     opens com.example.prg_fx_listwiew to javafx.fxml;
+    opens com.example.prg_fx_listwiew.controller to javafx.fxml;
+    opens com.example.prg_fx_listwiew.model to javafx.fxml;
     exports com.example.prg_fx_listwiew;
 }
