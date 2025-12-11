@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 import javafx.fxml.FXML;
 
@@ -19,6 +20,12 @@ public class KnihaController {
     @FXML private Label titulLabel;
     @FXML private Label autorLabel;
     @FXML private Label rokLabel;
+
+    @FXML private TextField titulField;
+    @FXML private TextField autorField;
+    @FXML private TextField rokField;
+
+    @FXML private Button button1;
 
 
     public void initialize(){
@@ -33,5 +40,14 @@ public class KnihaController {
         autorLabel.setText(knihaListView.getSelectionModel().getSelectedItem().getAutor());
         rokLabel.setText(String.valueOf(knihaListView.getSelectionModel().getSelectedItem().getRokVydani()));
     }
+
+    public void handlePridatKnihu(){
+        knihaListView.getItems().add(new Kniha(titulField.getText(), autorField.getText(), Integer.parseInt(rokField.getText())));
+
+    }
+
+
+
+
 
 }
