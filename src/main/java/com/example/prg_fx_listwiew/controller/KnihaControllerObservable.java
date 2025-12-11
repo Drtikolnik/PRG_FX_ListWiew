@@ -1,16 +1,16 @@
 package com.example.prg_fx_listwiew.controller;
 import com.example.prg_fx_listwiew.model.Kniha;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-import javafx.fxml.FXML;
+public class KnihaControllerObservable {
+    private ObservableList<Kniha> knihy = FXCollections.observableArrayList();
 
-
-
-public class KnihaController {
     @FXML
     private ListView<Kniha> knihaListView;
 
@@ -24,12 +24,11 @@ public class KnihaController {
 
     @FXML private Button button1;
 
-
+    @FXML
     public void initialize(){
-        Kniha k1 = new Kniha("Pravda Bohů", "Alberto", 2024);
-        knihaListView.getItems().add(k1);
-        Kniha k2 = new Kniha("Pravda Konce", "Alberto", 2029);
-        knihaListView.getItems().add(k2);
+        knihy.add(new Kniha("Pravda Bohů", "Alberto", 2024));
+        knihy.add(new Kniha("Pravda Konce", "Alberto", 2029));
+        knihaListView.setItems(knihy);
     }
 
     public void handleVyberKnihu(){
@@ -39,7 +38,7 @@ public class KnihaController {
     }
 
     public void handlePridatKnihu(){
-        knihaListView.getItems().add(new Kniha(titulField.getText(), autorField.getText(), Integer.parseInt(rokField.getText())));
+        knihy.add(new Kniha(titulField.getText(), autorField.getText(), Integer.parseInt(rokField.getText())));
         titulLabel.setText(titulField.getText());
         autorLabel.setText(autorField.getText());
         rokLabel.setText(String.valueOf(rokField.getText()));
@@ -47,6 +46,20 @@ public class KnihaController {
         autorField.clear();
         rokField.clear();
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
