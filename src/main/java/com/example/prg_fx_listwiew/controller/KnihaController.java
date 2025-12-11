@@ -1,9 +1,6 @@
 package com.example.prg_fx_listwiew.controller;
 import com.example.prg_fx_listwiew.model.Kniha;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+
 import javafx.scene.control.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -43,8 +40,8 @@ public class KnihaController {
 
     public void handlePridatKnihu(){
         knihaListView.getItems().add(new Kniha(titulField.getText(), autorField.getText(), Integer.parseInt(rokField.getText())));
-
     }
+
 
 
 
