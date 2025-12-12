@@ -15,6 +15,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("KnihaFXML.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 500, 400);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         BorderPane root = new BorderPane();
         //BorderPane borderPane = (BorderPane) fxmlLoader.getRoot();
         stage.setTitle("kniHOVNA");

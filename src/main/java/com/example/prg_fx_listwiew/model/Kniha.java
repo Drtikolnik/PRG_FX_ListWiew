@@ -26,12 +26,20 @@ public class Kniha {
     public String getTitul() {
         return titul;
     }
-
     public String getAutor() {
         return autor;
     }
-
     public int getRokVydani() {
         return rokVydani;
+    }
+
+    public void setTitul(String titul) {
+        this.titul = titul;
+    }
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+    public void setRokVydani(int rokVydani) {
+        this.rokVydani = rokVydani;
     }
 }

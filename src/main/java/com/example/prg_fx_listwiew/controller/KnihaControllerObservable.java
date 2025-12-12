@@ -47,6 +47,7 @@ public class KnihaControllerObservable {
         rokField.setText(String.valueOf(knihaListView.getSelectionModel().getSelectedItem().getRokVydani()));
     }
 
+    ///ošetřit
     public void handlePridatKnihu(){
         knihy.add(new Kniha(titulField.getText(), autorField.getText(), Integer.parseInt(rokField.getText())));
         titulLabel.setText(titulField.getText());
@@ -67,6 +68,7 @@ public class KnihaControllerObservable {
     }
 
     public void handleUpravitKnihu(){
+        handleVyberKnihu();
         if(knihaListView.getSelectionModel().getSelectedItem() == null){
 
         }else{
