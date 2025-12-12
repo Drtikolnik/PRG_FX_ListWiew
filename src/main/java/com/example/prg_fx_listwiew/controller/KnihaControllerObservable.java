@@ -70,8 +70,7 @@ public class KnihaControllerObservable {
         if(knihaListView.getSelectionModel().getSelectedItem() == null){
 
         }else{
-            handleOdebratKnihu();
-            handlePridatKnihu();
+
         }
     }
 
@@ -81,6 +80,7 @@ public class KnihaControllerObservable {
             if(najitField.getText().equals(k.getTitul())){
                 knihaListView.getSelectionModel().select(k);
                 handleVyberKnihu();
+                return;
             }
         }
 
