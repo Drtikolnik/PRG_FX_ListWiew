@@ -21,13 +21,20 @@ public class KnihaControllerObservable {
     @FXML private TextField titulField;
     @FXML private TextField autorField;
     @FXML private TextField rokField;
+    @FXML private TextField najitField;
 
     @FXML private Button button1;
+    @FXML private Button button2;
+    @FXML private Button button3;
+    @FXML private Button button4;
 
     @FXML
     public void initialize(){
-        knihy.add(new Kniha("Pravda Bohů", "Alberto", 2024));
-        knihy.add(new Kniha("Pravda Konce", "Alberto", 2029));
+        knihy.add(new Kniha("Pravda Bohů", "Alberto", 2024)); //Teles
+        knihy.add(new Kniha("Pravda Světla", "Alberto", 2025)); //Liren
+        knihy.add(new Kniha("Pravda Prvních", "Alberto", 2026)); //Olrim
+        knihy.add(new Kniha("Pravda Konce", "Alberto", 2027)); //Ralok-Irlma
+        knihy.add(new Kniha("Pravda Počátku", "Alberto", 2029)); //Nalis
         knihaListView.setItems(knihy);
     }
 
@@ -35,6 +42,9 @@ public class KnihaControllerObservable {
         titulLabel.setText(knihaListView.getSelectionModel().getSelectedItem().getTitul());
         autorLabel.setText(knihaListView.getSelectionModel().getSelectedItem().getAutor());
         rokLabel.setText(String.valueOf(knihaListView.getSelectionModel().getSelectedItem().getRokVydani()));
+        titulField.setText(knihaListView.getSelectionModel().getSelectedItem().getTitul());
+        autorField.setText(knihaListView.getSelectionModel().getSelectedItem().getAutor());
+        rokField.setText(String.valueOf(knihaListView.getSelectionModel().getSelectedItem().getRokVydani()));
     }
 
     public void handlePridatKnihu(){
@@ -46,6 +56,37 @@ public class KnihaControllerObservable {
         autorField.clear();
         rokField.clear();
     }
+
+    public void handleOdebratKnihu(){
+        if(knihaListView.getSelectionModel().getSelectedItem() == null){
+
+        }else{
+            knihy.remove(knihaListView.getSelectionModel().getSelectedItem());
+        }
+
+    }
+
+    public void handleUpravitKnihu(){
+        if(knihaListView.getSelectionModel().getSelectedItem() == null){
+
+        }else{
+            handleOdebratKnihu();
+            handlePridatKnihu();
+        }
+    }
+
+    public void handleNajitKnihu(){
+
+        for(Kniha k : knihy){
+            if(najitField.getText().equals(k.getTitul())){
+                knihaListView.getSelectionModel().select(k);
+                handleVyberKnihu();
+            }
+        }
+
+    }
+
+
 
 
 

@@ -24,7 +24,7 @@
       </VBox>
    </center>
    <bottom>
-      <GridPane BorderPane.alignment="CENTER">
+      <GridPane prefHeight="96.0" prefWidth="601.0" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -33,12 +33,17 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <TextField fx:id="titulField" GridPane.columnIndex="1" />
             <TextField fx:id="autorField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="rokField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Button fx:id="button1" mnemonicParsing="false" onAction="#handlePridatKnihu" text="pridat knihu" GridPane.rowIndex="1" />
+            <Button fx:id="button2" mnemonicParsing="false" onAction="#handleOdebratKnihu" text="Smazat" GridPane.rowIndex="2" />
+            <Button fx:id="button3" mnemonicParsing="false" onAction="#handleUpravitKnihu" text="Upravit" />
+            <Button fx:id="button4" mnemonicParsing="false" onAction="#handleNajitKnihu" text="Najít" GridPane.rowIndex="3" />
+            <TextField fx:id="najitField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </bottom>
