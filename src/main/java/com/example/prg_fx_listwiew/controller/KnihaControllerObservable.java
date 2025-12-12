@@ -70,7 +70,9 @@ public class KnihaControllerObservable {
         if(knihaListView.getSelectionModel().getSelectedItem() == null){
 
         }else{
-
+            handleOdebratKnihu();
+            handlePridatKnihu();
+            //knihaListView.refresh();
         }
     }
 
